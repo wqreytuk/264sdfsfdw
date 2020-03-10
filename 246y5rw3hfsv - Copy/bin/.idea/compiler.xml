@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="246y5rw3hfsv - Copy" />
         <module name="sdfsdf" />
         <module name="day01_eesy_02factory" />
       </profile>
