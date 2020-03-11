@@ -33,6 +33,15 @@
 							访问修饰符 返回值 包名、包名、包名...类名.方法名(参数列表)
 						标准的表达式写法：
 							public void com.itheima.service.impl.AccountServiceImpl.saveAccount()
+
+						全通配写法：
+							* *..*.*(..)
+						包名可以使用..表示当前包以及子包
+						返回值、类名和方法名都可以使用*实现通配
+						方法参数可以使用..表示有无参数均可，参数可以是任意类型
+						通配包名的时候，有几级包就写几个*
+							比如com.itheima.service.impl.
+								*.*.*.*.
 	-->
 
 <!--	配置logger类-->
@@ -44,7 +53,7 @@
 指定的方法执行之前被执行-->
 		<aop:aspect id="logAdvice" ref="logger">
 <!--			配置通知的类型并建立通知方法和切入点方法的关联-->
-			<aop:before method="printLog" pointcut="execution(public void com.itheima.service.impl.AccountServiceImpl.saveAccount())"></aop:before>
+			<aop:before method="printLog" pointcut="execution(* *..*.*(..))"></aop:before>
 		</aop:aspect>
 	</aop:config>
 </beans>
