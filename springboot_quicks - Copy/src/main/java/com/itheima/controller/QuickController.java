@@ -13,6 +13,6 @@ public class QuickController {
     @RequestMapping("/quick")
     @ResponseBody
     public String quick() {
-        return "hello springboot";
+        return "中文";
     }
 }
