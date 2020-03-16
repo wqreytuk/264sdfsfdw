@@ -15,8 +15,8 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/query")
-    public User testQuery() {
-        return userService.selectUserByName("Daisy");
+    public List<User> testQuery() {
+        return userService.selectAllUser();
     }
 
     @RequestMapping("/insert")

@@ -7,5 +7,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
+#  要扫描的包，这个包就是我们数据库操作的对象类所在的包，在本例中我们操作的User对象
   type-aliases-package: com.example.domain
+#  指明配置文件位置
   mapper-locations: classpath:mapper/*Mapper.xml
