@@ -1,7 +1,7 @@
 package com.example.demo5.service;
 
-import com.example.demo5.bean.User;
 import com.example.demo5.dao.UserDao;
+import com.example.demo5.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

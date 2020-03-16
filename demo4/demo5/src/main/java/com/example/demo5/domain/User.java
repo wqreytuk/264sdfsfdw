@@ -1,4 +1,4 @@
-package com.example.demo5.bean;
+package com.example.demo5.domain;
 
 public class User {
     private int id;
