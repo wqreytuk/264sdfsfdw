@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="fsd">
+    <output-path>$PROJECT_DIR$/out/artifacts/fsd</output-path>
+    <root id="archive" name="fsd.war" />
+  </artifact>
+</component>
