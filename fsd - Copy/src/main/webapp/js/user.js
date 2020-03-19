@@ -1,7 +1,7 @@
 var vue = new Vue({
     el: "#app",
     data: {
-        user: {id:"1",username:"aaa",password:"",age:"",sex:"",email:""},
+        user: {id:"",username:"",password:"",age:"",sex:"",email:""},
         userList: []
     },
     methods: {
