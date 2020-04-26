@@ -1,38 +1,44 @@
 (function (Vue) {
-// 0. 如果使用模块化机制编程，导入Vue和VueRouter，要调用 Vue.use(VueRouter)
+  //es6推荐我们使用const声明变量，因为const是块作用域，也就是{}包括的区域，比如函数、if语句等等
+const App = Vue.extend({});
 
-// 1. 定义 (路由) 组件。
-// 可以从其他文件 import 进来
-var App = Vue.extend({})
+const songs =
 
-var Home = Vue.extend({ template: '<h1>Home</h1>' });
-const List = Vue.extend({ template: '<h1>List</h1>' });
-const Item = Vue.extend({ template: '<h1>Item</h1>' });
+const loadTemplate = function (name) {
+  return document.getElementById(name + "_tmpl").innerHTML
+}
 
-// 2. 定义路由
-// 每个路由应该映射一个组件。 其中"component" 可以是
-/
-  / 通过 Vue.extend() 创建的组件构造器，
-// 或者，只是一个组件配置对象。
-// 我们晚点再讨论嵌套路由。
+const Home = Vue.extend({
+  template: loadTemplate('home')
+});
+const List = Vue.extend({
+  template: loadTemplate('list'),
+  data: function () {
+    return {
+      list: songs
+    }
+  }
+});
+const Item = Vue.extend({
+  template: loadTemplate('item')
+});
 
-  var router = new VueRouter
-  router.map({
-    '/home':{
-      component:Home
-    },
-    '/songs':{
-      component:List
-    },
-    '/songs/:id':{
-      component:Item
-    },
-  })
+const router = new VueRouter();
 
-// 4. 创建和挂载根实例。
-// 记得要通过 router 配置参数注入路由，
-// 从而让整个应用都有路由功能
-router.start(App, '#app')
+router.map({
+  '/home':{
+    name: 'home',
+    component:Home
+  },
+  '/songs':{
+    name: 'list',
+    component:List
+  },
+  '/songs/:id':{
+    name: 'item',
+    component:Item
+  },
+});
 
-// 现在，应用已经启动了！
-})(Vue)
+router.start(App, '#app');
+})(Vue);
